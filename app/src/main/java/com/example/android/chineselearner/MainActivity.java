@@ -17,4 +17,19 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, NumbersActivity.class);
         startActivity(i);
     }
+
+    public void familyClicked(View v) {
+        Intent i = new Intent(this, FamilyActivity.class);
+        startActivity(i);
+    }
+
+    public void colorsClicked(View v) {
+        Intent i = new Intent(this, ColorsActivity.class);
+        startActivity(i);
+    }
+
+    public void phrasesClicked(View v) {
+        Intent i = new Intent(this, PhrasesActivity.class);
+        startActivity(i);
+    }
 }

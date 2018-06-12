@@ -21,20 +21,23 @@
         android:layout_height="wrap_content"
         android:text="Family Members"
         style="@style/Title"
-        android:background="#009900" />
+        android:background="#009900"
+        android:onClick="familyClicked"/>
     <TextView
         android:id="@+id/colors"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Colors"
         style="@style/Title"
-        android:background="#993399" />
+        android:background="#993399"
+        android:onClick="colorsClicked"/>
     <TextView
         android:id="@+id/phrases"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Phrases"
         style="@style/Title"
-        android:background="#0066ff" />
+        android:background="#0066ff"
+        android:onClick="phrasesClicked"/>
 
 </LinearLayout>
