@@ -13,31 +13,27 @@
         android:layout_height="wrap_content"
         android:text="Numbers"
         style="@style/Title"
-        android:background="#ff8533"
-        android:onClick="numbersClicked"/>
+        android:background="#ff8533" />
     <TextView
         android:id="@+id/family"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Family Members"
         style="@style/Title"
-        android:background="#009900"
-        android:onClick="familyClicked"/>
+        android:background="#009900" />
     <TextView
         android:id="@+id/colors"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Colors"
         style="@style/Title"
-        android:background="#993399"
-        android:onClick="colorsClicked"/>
+        android:background="#993399" />
     <TextView
         android:id="@+id/phrases"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Phrases"
         style="@style/Title"
-        android:background="#0066ff"
-        android:onClick="phrasesClicked"/>
+        android:background="#0066ff" />
 
 </LinearLayout>
