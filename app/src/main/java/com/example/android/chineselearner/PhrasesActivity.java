@@ -12,7 +12,7 @@ public class PhrasesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phrases);
+        setContentView(R.layout.basic_layout);
 
         ArrayList<Word> phrases = new ArrayList<>();
 
@@ -31,7 +31,7 @@ public class PhrasesActivity extends AppCompatActivity {
         phrases.add(new Word("Where is ...?", "...在哪里？"));
 
         WordAdapter phr = new WordAdapter(this, phrases);
-        ListView listView = findViewById(R.id.phrases);
+        ListView listView = findViewById(R.id.basicView);
         listView.setAdapter(phr);
     }
 }
