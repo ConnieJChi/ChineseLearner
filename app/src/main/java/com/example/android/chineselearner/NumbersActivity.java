@@ -21,34 +21,31 @@ public class NumbersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_numbers);
 
 
-        ArrayList<String> numArr = new ArrayList<String>();
+        ArrayList<Word> numArr = new ArrayList ();
 
-        numArr.add("zero");
-        numArr.add("one");
-        numArr.add("two");
-        numArr.add("three");
-        numArr.add("four");
-        numArr.add("five");
-        numArr.add("six");
-        numArr.add("seven");
-        numArr.add("eight");
-        numArr.add("nine");
-        numArr.add("ten");
+        numArr.add(new Word("zero", "零"));
+        numArr.add(new Word("one", "一"));
+        numArr.add(new Word("two", "二"));
+        numArr.add(new Word("three", "三"));
+        numArr.add(new Word("four", "四"));
+        numArr.add(new Word("five", "五"));
+        numArr.add(new Word("six", "六"));
+        numArr.add(new Word("seven", "七"));
+        numArr.add(new Word("eight", "八"));
+        numArr.add(new Word("nine", "九"));
+        numArr.add(new Word("ten", "十"));
 
-//        for (int i = 0; i <= 10; i++) {
-//            Log.v("ColorsActivity", "word at index " + i + " is " + numArr.get(i));
-//        }
+//        WordAdapter flavorAdapter = new WordAdapter(this, numArr);
+//
+//        // Get a reference to the ListView, and attach the adapter to the listView.
+//        ListView listView = (ListView) findViewById(R.id.rootView);
+//        listView.setAdapter(flavorAdapter);
 
-//        ListView root = (ListView) this.findViewById(R.id.rootView);
-//        for (int i= 0; i < numArr.size(); i++) {
-//            TextView zero = new TextView(this);
-//            zero.setText(numArr.get(i));
-//            root.addView(zero);
-//        }
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, numArr);
+        WordAdapter adapter = new WordAdapter(this, numArr);
+
         ListView listView = (ListView) findViewById(R.id.rootView);
-        listView.setAdapter(itemsAdapter);
 
+        listView.setAdapter(adapter);
     }
 }
 
