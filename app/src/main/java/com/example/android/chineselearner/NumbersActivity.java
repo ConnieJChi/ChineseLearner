@@ -13,8 +13,7 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-
-        ArrayList<Word> numArr = new ArrayList ();
+        ArrayList<Word> numArr = new ArrayList<> ();
 
         numArr.add(new Word("zero", "零"));
         numArr.add(new Word("one", "一"));
