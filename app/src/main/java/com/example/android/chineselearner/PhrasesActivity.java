@@ -1,5 +1,6 @@
 package com.example.android.chineselearner;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -30,7 +31,7 @@ public class PhrasesActivity extends AppCompatActivity {
         phrases.add(new Word("Sorry", "对不起"));
         phrases.add(new Word("Where is ...?", "...在哪里？"));
 
-        WordAdapter phr = new WordAdapter(this, phrases);
+        WordAdapter phr = new WordAdapter(this, phrases, Color.parseColor("#0066ff"));
         ListView listView = findViewById(R.id.basicView);
         listView.setAdapter(phr);
     }

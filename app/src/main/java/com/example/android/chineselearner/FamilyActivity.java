@@ -1,5 +1,6 @@
 package com.example.android.chineselearner;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +30,7 @@ public class FamilyActivity extends AppCompatActivity {
         family.add(new Word("Mother's Mother", "外父母", R.mipmap.family_grandmother_nv));
         family.add(new Word("Mother's Father", "外祖父", R.mipmap.family_grandfather_nv));
 
-        WordAdapter adapter = new WordAdapter(this, family);
+        WordAdapter adapter = new WordAdapter(this, family, Color.parseColor("#009900"));
 
         ListView f = findViewById(R.id.basicView);
 

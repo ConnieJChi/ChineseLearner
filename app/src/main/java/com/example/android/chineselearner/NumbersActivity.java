@@ -1,5 +1,6 @@
 package com.example.android.chineselearner;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -26,7 +27,7 @@ public class NumbersActivity extends AppCompatActivity {
         numArr.add(new Word("nine", "九", R.mipmap.number_nine));
         numArr.add(new Word("ten", "十", R.mipmap.number_ten));
 
-        WordAdapter adapter = new WordAdapter(this, numArr);
+        WordAdapter adapter = new WordAdapter(this, numArr, Color.parseColor("#ff8533"));
 
         // Get a reference to the ListView, and attach the adapter to the listView.
         ListView listView = findViewById(R.id.basicView);

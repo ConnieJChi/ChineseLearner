@@ -1,5 +1,6 @@
 package com.example.android.chineselearner;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +29,7 @@ public class ColorsActivity extends AppCompatActivity {
         colors.add(new Word("black", "黑色", R.mipmap.color_black));
         colors.add(new Word("brown", "棕色", R.mipmap.color_brown));
 
-        WordAdapter colorsAdapt = new WordAdapter(this, colors);
+        WordAdapter colorsAdapt = new WordAdapter(this, colors, Color.parseColor("#993399"));
         ListView listView = findViewById(R.id.basicView);
         listView.setAdapter(colorsAdapt);
 
