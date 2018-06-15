@@ -36,6 +36,11 @@ public class WordAdapter extends ArrayAdapter<Word>{
         TextView chinese = listItemView.findViewById(R.id.second);
         chinese.setText(currentWord.getChineseTranslation());
 
+        if (currentWord.getImageAddress() != 0) {
+            ImageView image = listItemView.findViewById(R.id.image);
+            image.setImageResource(currentWord.getImageAddress());
+        }
+
         return listItemView;
     }
 }
