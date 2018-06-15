@@ -26,6 +26,7 @@ public class ColorsActivity extends AppCompatActivity {
         colors.add(new Word("white", "白色"));
         colors.add(new Word("gray", "灰色"));
         colors.add(new Word("black", "黑色"));
+        colors.add(new Word("brown", "棕色"));
 
         WordAdapter colorsAdapt = new WordAdapter(this, colors);
         ListView listView = findViewById(R.id.basicView);
