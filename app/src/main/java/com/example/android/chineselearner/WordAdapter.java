@@ -3,6 +3,7 @@ package com.example.android.chineselearner;
 import android.app.Activity;
 import android.content.Context;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -21,10 +22,6 @@ public class WordAdapter extends ArrayAdapter<Word>{
     private int color = 0;
 
 
-    public WordAdapter(Activity context, ArrayList<Word> wordList) {
-        super(context, 0, wordList);
-    }
-
     public WordAdapter(Activity c, ArrayList<Word> w, int co) {
         super(c, 0, w);
         color = co;
@@ -42,15 +39,15 @@ public class WordAdapter extends ArrayAdapter<Word>{
         TextView english = listItemView.findViewById(R.id.first);
         english.setText(currentWord.getDefaultTranslation());
 
+        TextView chinese = listItemView.findViewById(R.id.second);
+        chinese.setText(currentWord.getChineseTranslation());
+
         ImageView image = listItemView.findViewById(R.id.image);
 
         if (currentWord.getImageAddress() != 0) {
-
-            image.setImageResource(currentWord.getImageAddress());
             image.setVisibility(View.VISIBLE);
+            image.setImageResource(currentWord.getImageAddress());
         } else {
-            TextView chinese = listItemView.findViewById(R.id.second);
-            chinese.setText(currentWord.getChineseTranslation());
             image.setVisibility(View.GONE);
         }
 

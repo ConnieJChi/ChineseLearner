@@ -45,5 +45,6 @@
             android:layout_toRightOf="@id/image"
             android:textSize="20dp"
             tools:text="Second" />
+
     </LinearLayout>
 </RelativeLayout>
