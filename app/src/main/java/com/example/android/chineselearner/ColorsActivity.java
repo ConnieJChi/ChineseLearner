@@ -12,7 +12,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class ColorsActivity extends AppCompatActivity {
-    private MediaPlayer m;
+    private MediaPlayer m = new MediaPlayer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,9 +38,14 @@ public class ColorsActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
            @Override
            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+               if(m.isPlaying()) {
+                   m.stop();
+                   m.release();
+               }
                Word word = colors.get(position);
                m = MediaPlayer.create(ColorsActivity.this, word.getSoundAddress());
                m.start();
+
                }
         });
     }

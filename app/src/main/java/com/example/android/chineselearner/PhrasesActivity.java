@@ -9,10 +9,10 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class PhrasesActivity extends AppCompatActivity {
-    private MediaPlayer m;
+    private MediaPlayer m = new MediaPlayer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,14 +41,15 @@ public class PhrasesActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                if(m.isPlaying()) {
+                    m.stop();
+                    m.release();
+                }
                 Word word = phrases.get(position);
                 m = MediaPlayer.create(PhrasesActivity.this, word.getSoundAddress());
-                if(m.isPlaying()) {
-                    m.pause();
-                } else {
-                    m.start();
-                    }
+                m.start();
             }
         });
+
     }
 }

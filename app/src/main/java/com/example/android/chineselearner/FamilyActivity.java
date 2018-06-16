@@ -11,7 +11,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class FamilyActivity extends AppCompatActivity {
-    private MediaPlayer m;
+    private MediaPlayer m = new MediaPlayer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +39,10 @@ public class FamilyActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                if(m.isPlaying()) {
+                    m.stop();
+                    m.release();
+                }
                 Word word = family.get(position);
                 m = MediaPlayer.create(FamilyActivity.this, word.getSoundAddress());
                 m.start();
