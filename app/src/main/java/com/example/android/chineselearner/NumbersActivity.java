@@ -37,14 +37,29 @@ public class NumbersActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
            @Override
            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-               if(m.isPlaying()) {
-                   m.stop();
+               if (m != null ) {
                    m.release();
+                   m = null;
                }
                Word word = numArr.get(position);
                m = MediaPlayer.create(NumbersActivity.this, word.getSoundAddress());
+               m.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                   @Override
+                   public void onCompletion(MediaPlayer mp) {
+                       m.release();
+                       m = null;
+                   }
+               });
                m.start(); }
         });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (m != null) {
+            m.release();
+        }
     }
 }
 
